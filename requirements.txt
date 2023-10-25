@@ -4,3 +4,4 @@ streamlit_chat
 typing
 openai
 pinecone-client
+sentence_transformers
