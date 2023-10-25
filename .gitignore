@@ -1,0 +1,17 @@
+# .gitignore
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python related
+dist/
+build/
+__pycache__/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# IDEs and editors
+.vscode/
