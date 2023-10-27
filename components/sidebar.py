@@ -4,7 +4,7 @@ from components.faq import faq
 def sidebar():
     with st.sidebar:
         st.markdown(
-            "## How to use\n"
+            "# How to use\n"
             "1. Enter your secret code below 👇\n"
             "2. Ask a question about the University of Vienna 🏫\n"
             "3. Get your answer 👨‍💻\n"
@@ -18,12 +18,17 @@ def sidebar():
         st.session_state["UNLOCK_CODE"] = unlock_code
 
         st.markdown("---")
-        st.markdown("# About")
+        st.markdown("## About")
         st.markdown(
             "UniGPT 🚀 allows you to ask questions about the University of Vienna "
             "and get accurate answers with instant citations. "
         )
         st.markdown("Made by [Ebubekir Şahan](mailto:sahan@ebubekir.at)")
+        st.markdown("---")
+        st.markdown("## Useful links & facts")
+        st.markdown("Source code: (coming soon)")
+        st.markdown("Data: (coming soon)")
+        st.markdown("24 371 out of ~100 000 English univie.ac.at pages were scraped")
         st.markdown("---")
 
         faq()

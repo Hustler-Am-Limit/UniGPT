@@ -37,6 +37,7 @@ st.header("UniGPT 🚀")
 sidebar()
 if st.session_state["UNLOCK_CODE"]:
     if st.session_state["UNLOCK_CODE"] == "billa":
+        #TODO: add gpt-4
         MODEL_LIST.insert(0, "gpt-3.5-turbo")
         MODEL_LIST.remove("debug")
         del st.session_state["llm"]

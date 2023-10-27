@@ -21,8 +21,8 @@ def get_docsearch(index_name: str, pinecone_api_key: str, pinecone_environment: 
     # initialize pinecone
     pinecone.init(api_key=pinecone_api_key, environment=pinecone_environment)
     # maybe use openai embeddings or bge-small instead of HF
-    hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
-    # hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+    #hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
+    hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 
     return Pinecone.from_existing_index(index_name, hf_embeddings)
 
