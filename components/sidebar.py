@@ -10,7 +10,7 @@ def sidebar():
             "3. Get your answer 👨‍💻\n"
         )
         unlock_code = st.text_input(
-            "Code",
+            "Secret code",
             placeholder="Enter your secret code here",
             # value=os.environ.get("OPENAI_API_KEY", None)
             # or st.session_state.get("OPENAI_API_KEY", ""),

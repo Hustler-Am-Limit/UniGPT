@@ -1,6 +1,7 @@
 import streamlit as st
 from components.sidebar import sidebar
-#from ui import is_question_valid
+
+# from ui import is_question_valid
 from core.utils import get_llm, get_docsearch, get_conversation_string
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from core.qa import get_qa_with_sources
@@ -37,11 +38,11 @@ st.header("UniGPT 🚀")
 sidebar()
 if st.session_state["UNLOCK_CODE"]:
     if st.session_state["UNLOCK_CODE"] == "billa":
-        #TODO: add gpt-4
+        # TODO: add gpt-4
         MODEL_LIST.insert(0, "gpt-3.5-turbo")
         MODEL_LIST.remove("debug")
         del st.session_state["llm"]
-    else: 
+    else:
         del st.session_state["llm"]
 
 model: str = st.selectbox("Model", options=MODEL_LIST)
@@ -122,7 +123,8 @@ with response_container:
                 for j, source_doc in enumerate(
                     st.session_state["responses"][i].source_documents
                 ):
-                    sources += f'{j+1}: [{source_doc.metadata["title"]}]({source_doc.metadata["source"]}) '
+                    # if title should be missing, replace the text of the hyperlink with a number
+                    sources += f'{j+1}: [{source_doc.metadata["title"] if source_doc.metadata["title"] != None and len(str.strip(source_doc.metadata["title"])) else j+1}]({source_doc.metadata["source"]}) '
                 message(
                     f'{st.session_state["responses"][i].answer}\n{sources}', key=str(i)
                 )
