@@ -40,6 +40,8 @@ if st.session_state["UNLOCK_CODE"]:
         # TODO: add gpt-4
         MODEL_LIST.insert(0, "gpt-3.5-turbo")
         MODEL_LIST.remove("debug")
+else:
+    st.warning("👈 You first need to enter your secret code into the text box on the left side!")
 
 if "PREV_UNLOCK_CODE" in st.session_state:
     if st.session_state["PREV_UNLOCK_CODE"] != st.session_state["UNLOCK_CODE"]:
