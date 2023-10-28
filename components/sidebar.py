@@ -16,7 +16,12 @@ def sidebar():
             # value=os.environ.get("OPENAI_API_KEY", None)
             # or st.session_state.get("OPENAI_API_KEY", ""),
         )
-        st.session_state["UNLOCK_CODE"] = unlock_code
+        st.session_state["UNLOCK_CODE"] = unlock_code.lower() if unlock_code else ""
+        if st.session_state["UNLOCK_CODE"]:
+            if st.session_state["UNLOCK_CODE"] == st.secrets["UNLOCK_CODE"]:
+                st.success("Your code is correct! Now ask your question!")
+            else:
+                st.error("Wrong code was entered!")
 
         st.markdown("---")
         st.markdown("## About")

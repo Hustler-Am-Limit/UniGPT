@@ -31,15 +31,23 @@ MODEL_LIST = ["debug"]
 st.set_page_config(page_title="UniGPT", page_icon="🚀", layout="wide")
 st.header("UniGPT 🚀")
 
+with open("style.css") as file:
+    st.markdown(f"<style>{file.read()}</style>", unsafe_allow_html=True)
+
 sidebar()
 if st.session_state["UNLOCK_CODE"]:
-    if st.session_state["UNLOCK_CODE"] == "billa":
+    if st.session_state["UNLOCK_CODE"] == st.secrets["UNLOCK_CODE"]:
         # TODO: add gpt-4
         MODEL_LIST.insert(0, "gpt-3.5-turbo")
         MODEL_LIST.remove("debug")
+
+if "PREV_UNLOCK_CODE" in st.session_state:
+    if st.session_state["PREV_UNLOCK_CODE"] != st.session_state["UNLOCK_CODE"]:
         del st.session_state["llm"]
-    else:
-        del st.session_state["llm"]
+        if "buffer_memory" in st.session_state:
+            del st.session_state["buffer_memory"]
+
+st.session_state["PREV_UNLOCK_CODE"] = st.session_state["UNLOCK_CODE"]
 
 model: str = st.selectbox("Model", options=MODEL_LIST)
 
@@ -90,8 +98,9 @@ if "buffer_memory" not in st.session_state:
 result = get_qa_with_sources(
     llm=st.session_state["llm"],
     docsearch=st.session_state["docsearch"],
-    memory=st.session_state.buffer_memory,
+    memory=st.session_state["buffer_memory"],
 )
+st.warning(str(st.session_state["buffer_memory"]))
 
 # with textcontainer:
 if question:
