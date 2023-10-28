@@ -1,6 +1,7 @@
 import streamlit as st
 from components.faq import faq
 
+
 def sidebar():
     with st.sidebar:
         st.markdown(
@@ -25,10 +26,14 @@ def sidebar():
         )
         st.markdown("Made by [Ebubekir Şahan](mailto:sahan@ebubekir.at)")
         st.markdown("---")
-        st.markdown("## Useful links & facts")
-        st.markdown("Source code: (coming soon)")
-        st.markdown("Data: (coming soon)")
-        st.markdown("24 371 out of ~100 000 English univie.ac.at pages were scraped")
+        st.markdown(
+            """
+            ## Useful links & facts\n
+            Source code: (coming soon)\n
+            Data: (coming soon)\n
+            Scraping was done on the 27. October 2023 and 24 371 out of ~100 000 English univie.ac.at pages were scraped
+            """
+        )
         st.markdown("---")
 
         faq()
