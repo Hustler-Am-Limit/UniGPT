@@ -20,8 +20,11 @@ No, the data is logged for me to improve the user experience and fix bugs as fas
 No.
 
 """)
-
-    expander = st.expander("## Disclaimer")
+    expander = st.expander("Props")
+    expander.write("""
+Andrew Ng and his courses, CS50AI by HarvardX, [KnowledgeGPT](https://github.com/mmz-001/knowledge_gpt/) by mmz-001, The [LangChain library](https://github.com/langchain-ai/langchain/) by Harrison Chase, The 2 PhD guys at Digital Factory.
+""")
+    expander = st.expander("Disclaimer")
     expander.write("""
 1. **No Liability:** The creator of this chatbot is not liable for any damages, direct or indirect, resulting from the use of this chatbot, including but not limited to any inaccuracies, errors, or omissions in the information provided.
 2. **No Warranty or Guarantee:** The information provided by the chatbot is based on scraped content from the University of Vienna's website and is provided "as is" without any warranties, express or implied, including the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The creator does not warrant that the chatbot will operate error-free or that the information provided will be accurate, complete, or timely.

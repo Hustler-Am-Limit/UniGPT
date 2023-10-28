@@ -14,13 +14,9 @@ def get_llm(model: str, **kwargs) -> BaseChatModel:
 
 
 def get_docsearch(index_name: str, pinecone_api_key: str, pinecone_environment: str):
-    # uncomment if you want to create new embeddings
-    # docsearch: Pinecone.VectorStore = Pinecone.from_documents(docs_chunks,
-    #                                                        hf_embeddings,
-    #                                                        index_name=index_name)
     # initialize pinecone
     pinecone.init(api_key=pinecone_api_key, environment=pinecone_environment)
-    # maybe use openai embeddings or bge-small instead of HF
+    # use bge-small instead of bge-large
     #hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
     hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 

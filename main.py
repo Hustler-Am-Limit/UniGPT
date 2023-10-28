@@ -1,7 +1,5 @@
 import streamlit as st
 from components.sidebar import sidebar
-
-# from ui import is_question_valid
 from core.utils import get_llm, get_docsearch, get_conversation_string
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from core.qa import get_qa_with_sources
@@ -10,8 +8,6 @@ from streamlit_chat import message
 from langchain.schema import BaseMessage
 from streamlit.logger import get_logger
 from langchain.docstore.document import Document
-
-# from pydantic import BaseModel
 from typing import List
 
 logger = get_logger(__name__)
@@ -136,112 +132,3 @@ with response_container:
                 message(
                     st.session_state["requests"][i], is_user=True, key=str(i) + "_user"
                 )
-
-    # if result:
-    #     chat_history = [(question, result["answer"])]
-    # else:
-    #     chat_history = []
-
-    # return conv_qa_with_sources({"question": question, "chat_history": chat_history})
-
-
-# conversation = ConversationChain(
-#     memory=st.session_state.buffer_memory, prompt=prompt_template, llm=llm, verbose=True
-# )
-
-
-##
-
-# if "responses" not in st.session_state:
-#     st.session_state["responses"] = ["Ask a question about the University of Vienna"]
-
-# if "requests" not in st.session_state:
-#     st.session_state["requests"] = []
-
-# if "buffer_memory" not in st.session_state:
-#     st.session_state.buffer_memory = ConversationBufferWindowMemory(
-#         k=3,
-#         return_messages=True,
-#         memory_key="chat_history",
-#         input_key="question",
-#         output_key="answer",
-#     )
-
-# response_container = st.container()
-# textcontainer = st.container()
-
-# with textcontainer:
-#     with st.form(key="qa_form"):
-#         question = st.text_input("Question: ", key="question")
-#         submit = st.form_submit_button("Submit")
-
-# with response_container:
-#     if st.session_state['responses']:
-#         for i in range(len(st.session_state['responses'])):
-#             st.chat_message(st.session_state['responses'][i])
-#             if i < len(st.session_state['requests']):
-#                 st.chat_message(st.session_state["requests"][i])
-
-
-##
-
-
-# with st.expander("Advanced Options"):
-#    return_all_chunks = st.checkbox("Show all chunks retrieved from vector search")
-#    # TODO: add useful options
-
-# # TODO: return all chunks
-# if return_all_chunks:
-#     pass
-
-# if submit:
-#     if not is_question_valid(question):
-#         st.stop()
-#     # Output Columns
-#     answer_col, sources_col = st.columns(2)
-
-# with st.spinner("typing..."):
-#     ...
-#     llm = get_llm(
-#         model=model,
-#         openai_api_key=openai_api_key,
-#         temperature=0.1,
-#         streaming=True,
-#         callbacks=[StreamingStdOutCallbackHandler()],
-#     )
-
-# # memory = ConversationBufferWindowMemory(
-# #     k=3,
-# #     return_messages=True,
-# #     memory_key="chat_history",
-# #     input_key="question",
-# #     output_key="answer",
-# # )
-
-#     docsearch = get_docsearch(
-#         index_name="unigpt-index",
-#         pinecone_api_key=st.secrets["PINECONE_API_KEY"],
-#         pinecone_environment=st.secrets["PINECONE_ENVIRONMENT"],
-#     )
-
-#     result = get_qa_with_sources(
-#         llm=llm,
-#         docsearch=docsearch,
-#         memory=st.session_state.buffer_memory,
-#         question=question,
-#         result=None,
-#     )
-#     st.session_state.requests.append(question)
-#     st.session_state.responses.append(result)
-
-# with answer_col:
-#     st.markdown("#### Answer")
-#     st.markdown(result["answer"])
-
-# with sources_col:
-#     st.markdown("#### Sources")
-#     for source in result["source_documents"]:
-#         st.markdown(source.page_content)
-#         st.markdown(source.metadata["source"])
-#         st.markdown(source.metadata["language"])
-#         st.markdown("---")
