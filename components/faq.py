@@ -6,7 +6,7 @@ def faq():
         """
 ## FAQ
 ### How does UniGPT work?
-In a nutshell, UniGPT was fed with scraped websites of the University of Vienna (e.g. univie.ac.at/en or studieren.univie.ac.at/en) 
+In a nutshell, UniGPT was fed with scraped websites of the University of Vienna (e.g. univie.ac.at/en, studieren.univie.ac.at/en) 
 and its contents were stored in a vector database that allows for semantic search and retrieval.
 
 When you ask a question, UniGPT will search through the
