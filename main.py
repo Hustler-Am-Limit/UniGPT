@@ -100,7 +100,6 @@ result = get_qa_with_sources(
     docsearch=st.session_state["docsearch"],
     memory=st.session_state["buffer_memory"],
 )
-st.warning(str(st.session_state["buffer_memory"]))
 
 # with textcontainer:
 if question:
