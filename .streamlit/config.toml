@@ -5,3 +5,6 @@ gatherUsageStats = false
 # Level of logging: 'error', 'warning', 'info', or 'debug'.
 # Default: 'info'
 level = "debug"
+
+[theme]
+base="light"
