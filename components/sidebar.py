@@ -34,8 +34,8 @@ def sidebar():
         st.markdown(
             """
             ## Useful links & facts\n
-            Source code: (coming soon)\n
-            Data: (coming soon)\n
+            Source code: [UniGPT](https://github.com/Hustler-Am-Limit/UniGPT/)\n
+            Data: [Scraped websites](https://github.com/Hustler-Am-Limit/UniGPT/blob/main/data/cleaned_english_documents.txt.zip)\n
             Scraping was done on the 27. October 2023 and 24 371 out of ~100 000 English univie.ac.at pages were scraped
             """
         )
