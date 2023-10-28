@@ -28,7 +28,7 @@ class Results:
 
 MODEL_LIST = ["debug"]
 
-st.set_page_config(page_title="UniGPT", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="UniGPT", page_icon="🚀", layout="wide", initial_sidebar_state="expanded")
 st.header("UniGPT 🚀")
 
 with open("style.css") as file:
