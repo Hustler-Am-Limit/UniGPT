@@ -19,7 +19,7 @@ def sidebar():
         st.session_state["UNLOCK_CODE"] = unlock_code.lower() if unlock_code else ""
         if st.session_state["UNLOCK_CODE"]:
             if st.session_state["UNLOCK_CODE"] == st.secrets["UNLOCK_CODE"]:
-                st.success("Your code is correct! Now ask your question!")
+                st.success("Your code is correct! Now ask your question! 👉")
             else:
                 st.error("Wrong code was entered!")
 

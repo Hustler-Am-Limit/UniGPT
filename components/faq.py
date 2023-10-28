@@ -22,7 +22,11 @@ No.
 """)
     expander = st.expander("Props")
     expander.write("""
-Andrew Ng and his courses, CS50AI by HarvardX, [KnowledgeGPT](https://github.com/mmz-001/knowledge_gpt/) by mmz-001, The [LangChain library](https://github.com/langchain-ai/langchain/) by Harrison Chase, The 2 PhD guys at Digital Factory.
+Andrew Ng and his courses\n
+CS50AI by HarvardX\n
+[KnowledgeGPT](https://github.com/mmz-001/knowledge_gpt/) by mmz-001\n
+The [LangChain library](https://github.com/langchain-ai/langchain/) by Chase, H.\n
+The 2 PhD guys at Digital Factory.
 """)
     expander = st.expander("Disclaimer")
     expander.write("""
