@@ -1,12 +1,12 @@
 # UniGPT 🚀
-Insert Video Link
+https://github.com/Hustler-Am-Limit/UniGPT/raw/main/media/readme-demo.mp4
 
 ## About
 UniGPT 🚀 allows you to ask questions about the University of Vienna and get accurate answers with instant citations.
 
 ## Useful links & facts
 Source code: this GitHub repo
-Data: Insert Link to data
+Data: [Scraped websites of the University of Vienna](https://github.com/Hustler-Am-Limit/UniGPT/blob/main/data/cleaned_english_documents.txt.zip)
 Scraping was done on the 27. October 2023 and 24 371 out of ~100 000 English univie.ac.at pages were scraped
 
 ## FAQ
